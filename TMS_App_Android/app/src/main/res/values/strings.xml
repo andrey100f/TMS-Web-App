@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">TMS_App</string>
+
+    <string name="event_name">Event Name</string>
+    <string name="event_location">Event Location</string>
+    <string name="details_button">Show more details</string>
+    <string name="event_image">Event Image</string>
+    <string name="show_events_title">Discover the best Events</string>
+    <string name="search_text">Search Event</string>
+    <string name="orders_title">My Orders</string>
+    <string name="ticket_category">Ticket Category</string>
+    <string name="total_price">Total Price</string>
+    <string name="filter_button_description">Filter Button</string>
+    <string name="menu_button_description">Menu Button</string>
+    <string name="order_image">Order Image</string>
+    <string name="user_name_menu">User Name</string>
+    <string name="events_menu">Events</string>
+    <string name="events_menu_image">Events Menu Image</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_image">Settings Menu Image</string>
+    <string name="logout_menu">Log Out</string>
+    <string name="logout_menu_image">Log Out Menu Image</string>
+    <string name="account_details_text">Change Your Account Details</string>
+    <string name="settings_button_settings">Change Details</string>
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+    <string name="email_text">Email</string>
+    <string name="full_name_text">Full Name</string>
+    <string name="log_in_title">Log In</string>
+    <string name="log_in_to_text">Log In to continue using the app</string>
+    <string name="register_text">Register</string>
+    <string name="sign_up_title">Sign Up</string>
+    <string name="sign_up_text">Sign Up to continue using the app</string>
+    <string name="event_description">Event Description</string>
+    <string name="capacity">Capacity</string>
+    <string name="number_of_tickets">Number of Tickets</string>
+    <string name="add_order_text">Add Order</string>
+    <string name="review_text">Review Text</string>
+    <string name="ticket_category_title">Chose the Ticket Category</string>
+    <string name="update_order">Update Order</string>
+    <string name="delete_order">Delete Order</string>
+    <string name="ordered_at">Ordered At</string>
+    <string name="add_filters">Add Filters</string>
+    <string name="chose_location">Location</string>
+    <string name="chose_event_category">Event Category</string>
+    <string name="reset_filters">Reset Filters</string>
+</resources>

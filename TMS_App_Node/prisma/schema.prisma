@@ -1,0 +1,112 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+  schemas  = ["tms_schema"]
+}
+
+model event_categories {
+  category_id            String   @id(map: "PK__event_ca__D54EE9B47B9209C7") @default(dbgenerated("newid()"), map: "DF__event_cat__categ__3C69FB99") @db.UniqueIdentifier
+  category_name          String   @unique(map: "UQ__event_ca__5189E255B5F3FB46") @db.VarChar(50)
+  event_category_version Int      @default(1, map: "DF__event_cat__event__6E01572D")
+  events                 events[]
+
+  @@schema("tms_schema")
+}
+
+model event_reviews {
+  review_id            String  @id(map: "PK__event_re__60883D90C4D6C0FF") @default(dbgenerated("newid()"), map: "DF__event_rev__revie__5535A963") @db.UniqueIdentifier
+  event_id             String  @db.UniqueIdentifier
+  user_id              String  @db.UniqueIdentifier
+  review_text          String? @db.VarChar(255)
+  rating               Int?
+  event_review_version Int     @default(1, map: "DF__event_rev__event__6EF57B66")
+  events               events  @relation(fields: [event_id], references: [event_id], onDelete: Cascade, map: "FK_event_reviews_events")
+  users                users   @relation(fields: [user_id], references: [user_id], onDelete: Cascade, map: "FK_event_reviews_users")
+
+  @@schema("tms_schema")
+}
+
+model events {
+  event_id          String              @id(map: "PK__events__2370F727B41A64AE") @default(dbgenerated("newid()"), map: "DF__events__event_id__47DBAE45") @db.UniqueIdentifier
+  category_id       String              @db.UniqueIdentifier
+  venue_id          String              @db.UniqueIdentifier
+  event_description String?             @db.VarChar(255)
+  event_name        String?             @db.VarChar(255)
+  start_date        DateTime?           @db.DateTime
+  end_date          DateTime?           @db.DateTime
+  image_url         String?             @db.VarChar(50)
+  event_version     Int                 @default(1, map: "DF__events__event_ve__6FE99F9F")
+  event_reviews     event_reviews[]
+  event_categories  event_categories    @relation(fields: [category_id], references: [category_id], onDelete: Cascade, map: "FK_events_event_categories")
+  venues            venues              @relation(fields: [venue_id], references: [venue_id], onDelete: Cascade, map: "FK_events_venues")
+  ticket_categories ticket_categories[]
+
+  @@schema("tms_schema")
+}
+
+model orders {
+  order_id           String            @id(map: "PK__orders__465962293E96FBA5") @default(dbgenerated("newid()"), map: "DF__orders__order_id__5070F446") @db.UniqueIdentifier
+  user_id            String            @db.UniqueIdentifier
+  ticket_category_id String            @db.UniqueIdentifier
+  ordered_at         DateTime?         @db.DateTime
+  number_of_tickets  Int?
+  total_price        Decimal?          @db.Decimal(10, 2)
+  order_version      Int               @default(1, map: "DF__orders__order_ve__70DDC3D8")
+  ticket_categories  ticket_categories @relation(fields: [ticket_category_id], references: [ticket_category_id], onDelete: Cascade, map: "FK_orders_ticket_categories")
+  users              users             @relation(fields: [user_id], references: [user_id], onDelete: Cascade, map: "FK_orders_users")
+
+  @@schema("tms_schema")
+}
+
+model ticket_categories {
+  ticket_category_id      String   @id(map: "PK__ticket_c__3FC8DEA23B1F570F") @default(dbgenerated("newid()"), map: "DF__ticket_ca__ticke__4CA06362") @db.UniqueIdentifier
+  event_id                String   @db.UniqueIdentifier
+  description             String?  @db.VarChar(255)
+  price                   Decimal? @db.Decimal(10, 2)
+  ticket_category_version Int      @default(1, map: "DF__ticket_ca__ticke__71D1E811")
+  orders                  orders[]
+  events                  events   @relation(fields: [event_id], references: [event_id], onDelete: Cascade, map: "ticket_categories_events")
+
+  @@schema("tms_schema")
+}
+
+model user_roles {
+  role_id           String  @id(map: "PK__user_rol__760965CCA5C99E50") @default(dbgenerated("newid()"), map: "DF__user_role__role___38996AB5") @db.UniqueIdentifier
+  role_name         String  @unique(map: "UQ__user_rol__783254B1EFA871BF") @db.VarChar(50)
+  user_role_version Int     @default(1, map: "DF__user_role__user___72C60C4A")
+  users             users[]
+
+  @@schema("tms_schema")
+}
+
+model users {
+  user_id       String          @id(map: "PK__users__B9BE370F967266AA") @default(dbgenerated("newid()"), map: "DF__users__user_id__440B1D61") @db.UniqueIdentifier
+  username      String          @unique(map: "UQ__users__F3DBC572C06FC12A") @db.VarChar(255)
+  email         String          @unique(map: "UQ__users__AB6E6164A9CB4B9D") @db.VarChar(255)
+  password      String          @db.VarChar(255)
+  customer_name String?         @db.VarChar(255)
+  user_role_id  String          @db.UniqueIdentifier
+  user_version  Int             @default(1, map: "DF__users__user_vers__73BA3083")
+  image_url     String?         @db.VarChar(50)
+  event_reviews event_reviews[]
+  orders        orders[]
+  user_roles    user_roles      @relation(fields: [user_role_id], references: [role_id], onDelete: Cascade, map: "FK_users_user_roles")
+
+  @@schema("tms_schema")
+}
+
+model venues {
+  venue_id      String   @id(map: "PK__venues__82A8BE8D500EB625") @default(dbgenerated("newid()"), map: "DF__venues__venue_id__3F466844") @db.UniqueIdentifier
+  location      String?  @db.VarChar(255)
+  type          String?  @db.VarChar(50)
+  capacity      Int?
+  venue_version Int      @default(1, map: "DF__venues__venue_ve__74AE54BC")
+  events        events[]
+
+  @@schema("tms_schema")
+}
