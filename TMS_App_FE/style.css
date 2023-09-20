@@ -1,0 +1,212 @@
+.container {
+    display: flex;
+    flex-direction: flex=column;
+    grid-template-columns: 20% repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+}
+
+.card_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    margin-right: 20px;
+}
+
+.description {
+    color: #939191;
+    margin: 0;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.input_number {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.input_button {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #0BBBF2;
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.select_button {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 22px;
+    background: #0BBBF2;
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.title {
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Outfit;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: center;
+}
+
+.subtitle {
+    color: #000;
+    margin-bottom: 4px;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Outfit;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.icon {
+    margin-left: 10px;
+}
+
+.readonly-number-input {
+    border: none;
+    /* Ascunde bordura */
+    background-color: transparent;
+    /* Fundal transparent */
+    font-size: 16px;
+    /* Dimensiunea fontului */
+    color: black;
+    /* Culoarea textului */
+    width: auto;
+    /* Lățimea se va ajusta automat la lungimea conținutului */
+    padding: 0;
+    /* Elimină orice spațiu în jurul câmpului */
+    outline: none;
+    /* Elimină conturul atunci când este selectat */
+}
+
+.readonly-number-input::-webkit-outer-spin-button,
+.readonly-number-input::-webkit-inner-spin-button {
+    /* Ascunde controalele în browserele bazate pe WebKit (cum ar fi Chrome, Safari) */
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.readonly-select {
+    /* Ascunde controlul săgeților */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Stiluri suplimentare pentru a arăta ca un text simplu */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    color: black;
+    width: auto;
+}
+
+.fa-check:hover {
+    color: green;
+}
+
+.fa-x:hover {
+    color: red;
+}
+
+.fa-trash {
+    color: red;
+}
+
+select {
+    appearance: none;
+    width: max-content;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+option:first-child {
+    color: #999;
+}
+
+@media (max-width: 1400px) {
+    #navbar {
+        display: none;
+        /* Afișare pentru rezoluție de 1400px sau mai mică */
+    }
+
+    #mobile_navbar {
+        display: block;
+        /* Ascundere pentru rezoluție de 1400px sau mai mică */
+    }
+}
+
+@media (min-width: 1400px) {
+    #mobile_navbar {
+        display: none;
+        /* Ascundere pentru rezoluție de 1400px sau mai mică */
+    }
+}
+
+@media (max-width: 1024px) {
+    .card_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .card_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .search_bar {
+        width: 75%;
+    }
+
+    .filter_content {
+        display: block;
+    }
+
+    #toolbar {
+        display: block;
+    }
+}

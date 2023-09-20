@@ -1,0 +1,46 @@
+.modal {
+    display: none;
+    font-family: Outfit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal .show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.modal .hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+}
+
+.filter_content {
+    display: flex;
+    gap: 20px;
+}

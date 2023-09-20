@@ -1,0 +1,24 @@
+.login_input {
+    width: 55%;
+    padding: 16px 20px;
+    /* Ajustăm puțin padding-ul pentru a face butoanele și inputurile mai mari */
+    margin: 8px 0;
+    flex-shrink: 0;
+    border-radius: 22px;
+    border: 1px solid #929292;
+    background: #FBFBFB;
+}
+
+.login_button {
+    width: 57%;
+    padding: 16px 20px;
+    /* Ajustăm puțin padding-ul pentru a face butoanele și inputurile mai mari */
+    margin: 8px 8px;
+    flex-shrink: 0;
+    border-radius: 22px;
+    background: #0BBBF2;
+}
+
+.form_container {
+    text-align: center;
+}

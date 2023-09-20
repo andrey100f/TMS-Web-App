@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/src/components/event/event_style.css">
+	<link rel="stylesheet" href="/src/components/order/order_styles.css">
+	<link rel="stylesheet" href="/src/components/utils/loader_style.css">
+	<link rel="stylesheet" href="/src/components/utils/modal_style.css">
+	<link rel="stylesheet" href="/src/components/utils/navbar_styles.css">
+	<link rel="stylesheet" href="/src/components/utils/table_styles.css">
+	<link rel="stylesheet" href="/src/components/utils/toolbar_styles.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="/src/components/utils/mobile_navbar_styles.css">
+	<title>TMS App</title>
+</head>
+
+<body>
+	<div class="container">
+		<div id="mobile_navbar">
+			<nav>
+				<div id="menuToggle">
+					<input type="checkbox" />
+					<span></span>
+					<span></span>
+					<span></span>
+					<ul id="menu">
+						<li>
+							<p class="user_message">Welcome back,</p>
+						</li>
+						<li>
+							<p class="user_name">User Name</p>
+						</li>
+						<li>
+							<a href="/events" class="menu_item">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+									fill="none">
+									<path
+										d="M28.0002 22.6667V10.6667H9.3335V22.6667H28.0002ZM28.0002 4C28.7074 4 29.3857 4.28095 29.8858 4.78105C30.3859 5.28115 30.6668 5.95943 30.6668 6.66667V22.6667C30.6668 23.3739 30.3859 24.0522 29.8858 24.5523C29.3857 25.0524 28.7074 25.3333 28.0002 25.3333H9.3335C8.62625 25.3333 7.94798 25.0524 7.44788 24.5523C6.94778 24.0522 6.66683 23.3739 6.66683 22.6667V6.66667C6.66683 5.95943 6.94778 5.28115 7.44788 4.78105C7.94798 4.28095 8.62625 4 9.3335 4H10.6668V1.33334H13.3335V4H24.0002V1.33334H26.6668V4H28.0002ZM4.00016 28H22.6668V30.6667H4.00016C3.29292 30.6667 2.61464 30.3857 2.11454 29.8856C1.61445 29.3855 1.3335 28.7072 1.3335 28V12H4.00016V28ZM25.3335 20H20.0002V14.6667H25.3335V20Z"
+										fill="#7D7373" />
+								</svg>
+								<p class="menu_item_text">Events</p>
+							</a>
+						</li>
+						<li>
+							<a href="/orders" class="menu_item">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+									fill="none">
+									<path
+										d="M8.072 4.976L21.294 10.642L16 12.91L2.854 7.276C3.15 6.974 3.512 6.73 3.924 6.572L8.072 4.976ZM10.748 3.948L13.848 2.756C15.2339 2.22321 16.7681 2.22321 18.154 2.756L28.078 6.572C28.488 6.732 28.85 6.972 29.146 7.276L23.834 9.552L10.748 3.948ZM29.988 9.092L17 14.658V29.558C17.3943 29.4915 17.7809 29.3856 18.154 29.242L28.078 25.424C28.6438 25.2062 29.1303 24.822 29.4734 24.3222C29.8165 23.8223 30.0001 23.2303 30 22.624V9.372C30.0004 9.27848 29.9957 9.18501 29.986 9.092H29.988ZM15 29.558V14.658L2.014 9.092C2.00499 9.18507 2.00032 9.2785 2 9.372V22.624C2.00008 23.2305 2.18399 23.8227 2.52746 24.3226C2.87094 24.8225 3.35786 25.2065 3.924 25.424L13.846 29.242C14.222 29.386 14.608 29.492 15 29.558Z"
+										fill="#7D7373" />
+								</svg>
+								<p class="menu_item_text">My Orders</p>
+							</a>
+						</li>
+						<li>
+							<a href="/" class="menu_item">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none">
+									<path
+										d="M18.6667 6.66667L16.8 8.53333L18.9333 10.6667H8V13.3333H18.9333L16.8 15.4667L18.6667 17.3333L24 12L18.6667 6.66667ZM2.66667 2.66667H12V0H2.66667C1.2 0 0 1.2 0 2.66667V21.3333C0 22.8 1.2 24 2.66667 24H12V21.3333H2.66667V2.66667Z"
+										fill="#7D7373" />
+								</svg>
+								<p class="menu_item_text">Log Out</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<div id="navbar">
+			<div id="user_menu">
+				<span class="user_message">Welcome back,</span>
+				<span class="user_name">User Name</span>
+			</div>
+			<ul id="menu_list">
+				<li>
+					<a href="/events" class="menu_item">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+							<path
+								d="M28.0002 22.6667V10.6667H9.3335V22.6667H28.0002ZM28.0002 4C28.7074 4 29.3857 4.28095 29.8858 4.78105C30.3859 5.28115 30.6668 5.95943 30.6668 6.66667V22.6667C30.6668 23.3739 30.3859 24.0522 29.8858 24.5523C29.3857 25.0524 28.7074 25.3333 28.0002 25.3333H9.3335C8.62625 25.3333 7.94798 25.0524 7.44788 24.5523C6.94778 24.0522 6.66683 23.3739 6.66683 22.6667V6.66667C6.66683 5.95943 6.94778 5.28115 7.44788 4.78105C7.94798 4.28095 8.62625 4 9.3335 4H10.6668V1.33334H13.3335V4H24.0002V1.33334H26.6668V4H28.0002ZM4.00016 28H22.6668V30.6667H4.00016C3.29292 30.6667 2.61464 30.3857 2.11454 29.8856C1.61445 29.3855 1.3335 28.7072 1.3335 28V12H4.00016V28ZM25.3335 20H20.0002V14.6667H25.3335V20Z"
+								fill="#7D7373" />
+						</svg>
+						<p class="menu_item_text">Events</p>
+					</a>
+				</li>
+				<li>
+					<a href="/orders" class="menu_item">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+							<path
+								d="M8.072 4.976L21.294 10.642L16 12.91L2.854 7.276C3.15 6.974 3.512 6.73 3.924 6.572L8.072 4.976ZM10.748 3.948L13.848 2.756C15.2339 2.22321 16.7681 2.22321 18.154 2.756L28.078 6.572C28.488 6.732 28.85 6.972 29.146 7.276L23.834 9.552L10.748 3.948ZM29.988 9.092L17 14.658V29.558C17.3943 29.4915 17.7809 29.3856 18.154 29.242L28.078 25.424C28.6438 25.2062 29.1303 24.822 29.4734 24.3222C29.8165 23.8223 30.0001 23.2303 30 22.624V9.372C30.0004 9.27848 29.9957 9.18501 29.986 9.092H29.988ZM15 29.558V14.658L2.014 9.092C2.00499 9.18507 2.00032 9.2785 2 9.372V22.624C2.00008 23.2305 2.18399 23.8227 2.52746 24.3226C2.87094 24.8225 3.35786 25.2065 3.924 25.424L13.846 29.242C14.222 29.386 14.608 29.492 15 29.558Z"
+								fill="#7D7373" />
+						</svg>
+						<p class="menu_item_text">My Orders</p>
+					</a>
+				</li>
+				<li>
+					<a href="/" class="menu_item">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path
+								d="M18.6667 6.66667L16.8 8.53333L18.9333 10.6667H8V13.3333H18.9333L16.8 15.4667L18.6667 17.3333L24 12L18.6667 6.66667ZM2.66667 2.66667H12V0H2.66667C1.2 0 0 1.2 0 2.66667V21.3333C0 22.8 1.2 24 2.66667 24H12V21.3333H2.66667V2.66667Z"
+								fill="#7D7373" />
+						</svg>
+						<p class="menu_item_text">Log Out</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="loader_div">
+			<span id="loader"></span>
+		</div>
+
+		<div id="content" class="main-content-component">
+		</div>
+	</div>
+
+	<script type="module" src="/src/components/main.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+
+</html>

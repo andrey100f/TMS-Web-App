@@ -1,0 +1,40 @@
+.main-content-component {
+    width: 100%;
+}
+
+.order_table {
+    font-family: Outfit;
+    font-size: large;
+    line-height: 2;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 25px 0;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.order_table thead tr {
+    background-color: #0BBBF2;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.order_table th,
+.order_table td {
+    padding: 12px 15px;
+}
+
+.order_table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.order_table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.order_table tbody tr:last-of-type {
+    border-bottom: 2px solid #0BBBF2;
+}
